@@ -1,0 +1,28 @@
+
+body {
+  margin: 400px;
+  padding: 50px;
+  text-align: center;
+  background: url("http://www.treatamerica.com/images/main_fs.jpg");
+}
+
+.white {
+  background: white;
+  border: solid black 5px;
+  padding: 50px;
+}
+
+img {
+  opacity: 0.2;
+}
+
+ul {
+  text-align: justify;
+  /* margin-left: 300px; */
+}
+
+
+
+.box {
+  background-color: yellow;
+}

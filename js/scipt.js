@@ -5,15 +5,15 @@ var questionA = function(){};
 questionA.prototype.init = function () {
   this._sendBtn = document.querySelector(".send")
   console.log(this._sendBtn);
-  this._answerBox = document.queryselector(".question=1");
-  this._showAnswer = document.queryselector(".answer-1")
+  this._answerBox = document.querySelector(".question-1");
+  this._showAnswer = document.querySelector(".answer-1")
   this._setUpListeners();
 };
 //Bind Listeners
 questionA.prototype._setUpListeners = function () {
   var _self = this;
   this._sendBtn.addEventListener("click", function(e){
-    var your Answer = _self.answerBox.value;
+    var yourAnswer = _self._answerBox.value;
     _self._showAnswer.innerText = yourAnswer;
   });
 };

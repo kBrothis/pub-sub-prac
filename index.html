@@ -2,9 +2,41 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Pub Sub Practice</title>
+    <title>Survey, Pub Sub Practice</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
   </head>
-  <body>
+  <body class="bg-dark pt-5">
+    <div class="container-fluid">
+      <div class="col-md-12 h-100">
+        <div class="card col-md-4 offset-md-4 jumbotron bg-primary border-warning">
+          <h1 class="card-title text-center text-white">Techtonic Survey</h1>
+        </div>
+      </div>
+      <div class="jumbotron jumbotron-fluid col-md-12 bg-transparent">
+        <div class="card col-md-4 offset-md-4 bg-warning border-warning text-white text-center ">
+          <ul class="list-group ">
+            <li class="list-group-item bg-primary border-warning">
+              What is your favorite color?
+            </li>
+            <li class="list-group-item bg-primary border-warning">
+              <input type="text" name="" value="" class="question-1 bg-primary border-warning text-white"/>
+            </li>
+            <li class="list-group-item bg-primary border-warning">
+              <span>Answer: </span>
+              <span class="answer-1"></span>
+            </li>
+            <li class="list-group-item bg-primary border-warning">
+              <button type="button" class= "send btn btn-lg btn-outline-warning" name="button">
+                Send
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- END CONTAINER FLUID -->
+    </div>
+
     <script src="js/scipt.js" charset="utf-8"></script>
   </body>
 </html>

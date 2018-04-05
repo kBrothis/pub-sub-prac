@@ -7,14 +7,8 @@ var questionAnswer = function(name){
 //initalizer
 questionAnswer.prototype.init = function () {
   this._sendBtn = document.querySelector(".send");
-
-  //QA one
-  this._answerBox = document.querySelector(".question-1");
-  this._showAnswer = document.querySelector(".answer-1")
-
-  //QA two
-  this._answerBoxTwo = document.querySelector(".question-2");
-  this._showAnswerTwo = document.querySelector(".answer-2")
+  this._answerBox = document.querySelectorAll(".question");
+  this._showAnswer = document.querySelectorAll(".answer");
 
   this._setUpListeners();
 };
@@ -24,8 +18,10 @@ questionAnswer.prototype._setUpListeners = function () {
   var _self = this;
 
   this._sendBtn.addEventListener("click", function(e){
-    _self._showAnswer.innerText = _self._answerBox.value;
-    _self._showAnswerTwo.innerText = _self._answerBoxTwo.value;
+    for(i=0; i < _self._answerBox.length; i++){
+      var myAnswer = _self._answerBox[i].value;
+      _self._showAnswer[i].innerText = myAnswer ? myAnswer : "--";
+    }
   });
 };
 

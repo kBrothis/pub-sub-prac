@@ -11,19 +11,43 @@
 </head>
 
 <body>
-  <div class="w-25 mx-auto mt-5 d-flex flex-column">
-    <ul class="list-group form-group">
-      <li class="list-group-item">What is your favorite color?</li>
-      <li class="list-group-item">
-        <input type="text" name="" id="" class="w-100 question-1">
-      </li>
-      <li class="list-group-item">
-        <span>Answer: </span>
-        <span class="answer-1"></span>
-      </li>
-    </ul>
-    <button class="btn send btn-primary w-100">Send</button>
+  <div class="fluid-container">
+
+      <div class="w-25 mx-auto mt-5 d-flex flex-column align-items-center justify-content-center">
+          <ul class="list-group form-group">
+            <li class="list-group-item">What is your favorite color?</li>
+            <li class="list-group-item">
+              <input type="text" name="" id="" class="w-100 question-1">
+            </li>
+            <li class="list-group-item">
+              <span>Answer: </span>
+              <span class="answer-1"></span>
+            </li>
+            <br>
+            <hr>
+            <li class="list-group-item">What is your favorite food?</li>
+            <li>
+                <input type="text" name="" value="" class=" w-100 question-2">
+            </li>
+            <li class="list-group-item">
+              <span>Answer: </span>
+              <span class="answer-2"></span>
+            </li>
+          </ul>
+          <div class="btn-div">
+              <br>
+              <hr>
+              <div class="w-100 col-md-12">
+                  <button class="row btn send-one btn-primary mr-2">Send 1st</button>
+
+                  <button class="row btn send-two btn-primary mr-2">Send 2nd</button>
+              </div>
+          </div>
+             
+        </div>
+
   </div>
+  
 
   <script src="js/scripts.js" defer charset="utf-8"></script>
 </body>

@@ -19,6 +19,13 @@ questionA.prototype._setupListeners = function(){
     var _self = this;
     this._sendBtn.addEventListener("click", function(e) {
         console.log(e);
+        if(_self._answerBox.value) {
+            console.log("value exists");
+        }
+        else {
+            alert();
+            HTMLFormControlsCollection.l
+        }
         _self._showAnswer.textContent = _self._answerBox.value;
         _self._answerBox.value = '';
     });

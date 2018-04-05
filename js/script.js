@@ -3,6 +3,7 @@ var questionA = function(){};
 
 questionA.prototype.init = function () {
   this._sendBtn = document.querySelector(".send");
+  this._sendBtn = document.querySelector(".clear");
   this._answerBox = document.querySelector(".question-1")
   this._showAnswer = document.querySelector(".answer-1");
   this._answerBox2 = document.querySelector(".question-2")

@@ -5,6 +5,7 @@
     <title>Survey, Pub Sub Practice</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Acme|Jua" rel="stylesheet">    <link rel="stylesheet" href="css/survey.css">
   </head>
   <body class="bg-dark pt-5">
     <div class="container-fluid">
@@ -29,6 +30,7 @@
       <div class="jumbotron jumbotron-fluid col-md-12 bg-transparent">
         <div class="card col-md-4 offset-md-4 bg-warning border-warning text-white text-center ">
           <ul class="list-group ">
+            <!--Q1 Fav Color?  -->
             <li class="list-group-item bg-primary border-warning">
               <i class="far fa-dot-circle text-warning"></i>
               What is your favorite color?
@@ -42,9 +44,27 @@
             <li class="list-group-item bg-primary border-warning">
               <i class="far fa-dot-circle text-warning"></i>
               <span>Answer: </span>
-              <span class="answer-1"></span>
+              <h3 class="answer-1 text-warning"></h3>
               <i class="far fa-dot-circle text-warning"></i>
             </li>
+            <!--Q2 Fav Food?  -->
+            <li class="list-group-item bg-primary border-warning">
+              <i class="far fa-dot-circle text-warning"></i>
+              What is your favorite food?
+              <i class="far fa-dot-circle text-warning"></i>
+            </li>
+            <li class="list-group-item bg-primary border-warning">
+              <i class="far fa-dot-circle text-warning"></i>
+              <input type="text" name="" value="" class="question-2 bg-primary border-warning text-white"/>
+              <i class="far fa-dot-circle text-warning"></i>
+            </li>
+            <li class="list-group-item bg-primary border-warning">
+              <i class="far fa-dot-circle text-warning"></i>
+              <span>Answer: </span>
+              <h3 class="answer-2 text-warning"></h3>
+              <i class="far fa-dot-circle text-warning"></i>
+            </li>
+            <!-- BUTTON <li> -->
             <li class="list-group-item bg-primary border-warning">
               <button type="button" class= "send btn btn-lg btn-outline-warning text-center" name="button">
                 Send
@@ -52,11 +72,41 @@
               </button>
             </li>
           </ul>
+
+          <!-- Bootstrap Modal Warning When the User doesn't enter and Answer -->
+          <div class="modal fade" id="noAnswerWarn" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body text-primary">
+                  <p>
+                    Please answer all questions before you click send to proceed.
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
+
       <!-- END CONTAINER FLUID -->
     </div>
 
-    <script src="js/scipt.js" charset="utf-8"></script>
+    <script src="js/script.js" charset="utf-8"></script>
+
+    <!-- BOOTSTRAP -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>

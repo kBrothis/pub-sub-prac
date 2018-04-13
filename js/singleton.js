@@ -1,16 +1,10 @@
-var Library =  function(){
-  this.myBookArray = new Array();
-  this.myTaskArray = new Array();
-};
-
 var Book = function(title, author, numPages, pubDate){
   this.title =  title;
   this.author = author;
   this.numPages = numPages;
   this.publishDate = new Date(pubDate);
-};
 
-Library.prototype.addBook =  function (book) {
+  addBook: function (book) {
   // add A book only
   for (i = 0; i < this.myBookArray.length; i++) {
     if ((this.myBookArray[i].title.toUpperCase() === book.title.toUpperCase()) &&
@@ -20,9 +14,9 @@ Library.prototype.addBook =  function (book) {
   }
        this.myBookArray.push(book);
        return true;
-};
+},
 
-Library.prototype.removeBookByTitle =  function (title) {
+  removeBookByTitle: function (title) {
   // remove all matched books by Title
   // case insensitive
   var status = false;
@@ -35,9 +29,9 @@ Library.prototype.removeBookByTitle =  function (title) {
   }
        console.log(this.myBookArray);
        return status;
-};
+},
 
-Library.prototype.removeBookByAuthor =  function (authorName) {
+  removeBookByAuthor: function (authorName) {
  // remove all matched books by AUthor authorNames
  // case insensitive
   var origLength = this.myBookArray.length;
@@ -54,9 +48,9 @@ Library.prototype.removeBookByAuthor =  function (authorName) {
     }
      else { return false;
      }
-};
+},
 
-Library.prototype.getRandomBook = function () {
+  getRandomBook: function () {
   // generate a Random number [0, length]
   // index of an array [0, lemgth-1]
   console.log(this.myBookArray.length);
@@ -74,9 +68,9 @@ Library.prototype.getRandomBook = function () {
                    console.log("the random number is: " + i);
                    console.log(this.myBookArray[i]);
                    }
-};
+},
 
-  Library.prototype.getBookByTitle =  function (subTitle) {
+   getBookByTitle:  function (subTitle) {
     // partially match by substring of subTitle
     // case insensitive
     // return matched array
@@ -89,9 +83,9 @@ Library.prototype.getRandomBook = function () {
                   }
               }
          console.log(this.myTaskArray);
-  };
+  },
 
-  Library.prototype.getBooksByAuthor =  function (subAuthor) {
+   getBooksByAuthor: function (subAuthor) {
     // partially match by substring of author names
     // case insensitive
     // return matched array
@@ -107,9 +101,9 @@ Library.prototype.getRandomBook = function () {
                    }
            }
         console.log(this.myTaskArray);
-  };
+  },
 
-  Library.prototype.addBooks =  function (booksList) {
+   addBooks: function (booksList) {
     //booksList is an array with multiple books
     // call addBook() for single book by FOR loop
     this.myTaskArray = ([]);
@@ -128,9 +122,9 @@ Library.prototype.getRandomBook = function () {
             }
           console.log(count);
           console.log(this.myTaskArray);
-  };
+  },
 
-  Library.prototype.getAuthors =  function () {
+   getAuthors: function () {
     // get authors by  complete names
     // case insensitive
     // return matched array
@@ -155,9 +149,9 @@ Library.prototype.getRandomBook = function () {
                  }
           }
               console.log(distinctArray);
-};
+},
 
-  Library.prototype.getRandomAuthorName =  function () {
+   getRandomAuthorName: function () {
     // get the entire Author Name by random
         var distinctAuthors = [];
         if (this.myBookArray.length == 0) {
@@ -170,36 +164,58 @@ Library.prototype.getRandomBook = function () {
              var i =  Math.floor((Math.random() * (this.myBookArray.length - 1)));
               console.log(this.myBookArray[i].author);
             }
-  };
+  },
 
   // Bonus parts
-  Library.prototype.setLocalStorage =  function (instanceKey) {
+  setLocalStorage:  function (instanceKey) {
           localStorage.setItem(instanceKey, JSON.stringify(this.myBookArray));
   };
 
-  Library.prototype.getLocalStorage = function(instanceKey) {
+  getLocalStorage = function(instanceKey) {
       // return this.myBookArray = JSON.parse(localStorage.getItem(instanceKey));
       this.myBookArray = JSON.parse(localStorage.getItem(instanceKey));
       if (this.myBookArray === null) {this.addBook();}
       return this.myBookArray;
-  };
+  },
 
   // search options either by Title or Authors
-  Library.prototype.search =  function (filterString) {
+  search:  function (filterString) {
      // search the Title or Author fields to match filterString
     // no usin filter() pre-defined functions
 
     var searchArray = ([]);
     for (i = 0; i < this.myBookArray.length; i++){
-        if ((this.myBookArray[i].title.toUpperCase().indexOf(filterString.toUpperCase()) !== -1) ||
-            (this.myBookArray[i].author.toUpperCase().indexOf(filterString.toUpperCase()) !== -1))
-            {
+        if (this.myBookArray[i].title.toUpperCase().indexOf(filterString.toUpperCase()) !== -1) {
               //this.getBookByTitle(filterString); // all partilly matches
               searchArray.push(this.myBookArray[i]);
-            }
+        }
+        else if(this.myBookArray[i].author.toUpperCase().indexOf(filterString.toUpperCase()) !== -1) {
+              //this.getBooksByAuthor(filterString); // all partilly matches
+              searchArray.push(this.myBookArray[i]);
+        }
     }
       console.log(searchArray);
-  };
+  }
+
+    //  init = function () {
+    //       this.addBook(book); //
+    //       this.removeBookByTitle(title);
+    //       this.removeBookByAuthor(authorName);
+    //       this.getRandomBook();
+    //       this.getBookByTitle(title);
+    //       this.getBooksByAuthor(authorName);
+    //       this.addBooks(books);
+    //       this.getAuthors();
+    //       this.getRandomAuthorName();
+    //       this.setObject();
+    //       this.getObject();
+    //
+    //       this.search();
+    // };
+    //
+
+};
+
 
 //    library.prototype.init = function () {
 //         this.addBook(book); //
@@ -220,9 +236,8 @@ Library.prototype.getRandomBook = function () {
 //Lib instance
 var gLib = new Library();
 // window.gLib.init();
-
-
 // book instances
+
 // toUpperCase()
 // var gIt0 = new Book({title: "IT", author: "S King", numPages: 800, pubDate: "Decembher 17, 1995 03:24:00"}); // problem
 var gIt0 = new Book("IT","S King",800,"Decembher 17, 1995 03:24:00");
